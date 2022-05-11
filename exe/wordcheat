@@ -1,3 +1,62 @@
 #!/usr/bin/env ruby
 
 require "wordcheat"
+require "optparse"
+
+cheater = Wordcheat::Cheater.new
+OptionParser.new do |parser|
+  parser.banner = "Usage: wordcheat [options]"
+  parser.on("-f PATH",
+            "--file=PATH",
+            String,
+            "Path to a line delimited list of words (./words.txt is default)") do |path|
+              cheater.words_list_path = path
+            end
+
+  parser.on("-p PATTERN",
+            "--pattern=PATTERN",
+            String,
+            "Words must match the exact pattern using '_' for unknown spaces and letters for known spaces (e.g. 'b_dg_r')") do |pattern|
+              cheater.pattern = pattern
+            end
+
+  parser.on("-n LENGTH",
+            "--length=LENGTH",
+            Integer,
+            "Words much match the length given") do |length|
+              cheater.length = Integer(length)
+            end
+
+  parser.on("-m CHARS",
+            "--must=CHARS",
+            String,
+            "Words must include the given letters") do |must|
+              cheater.must = must
+            end
+
+  parser.on("-x CHARS",
+            "--must-not=CHARS",
+            String,
+            "Words must not include the given letters") do |must_not|
+              cheater.must_not = must_not
+            end
+
+  parser.on("-o CHARS",
+            "--only=CHARS",
+            String,
+            "Words must only use the letters given") do |only|
+              cheater.only = only
+            end
+
+  parser.on("-h",
+            "--help",
+            "Display this screen") do 
+              puts parser
+              exit
+            end
+end.parse!
+
+matches = cheater.words
+matches.each do |match|
+  puts match
+end
