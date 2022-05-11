@@ -29,7 +29,7 @@ module Wordcheat
     end
 
     def pattern= pattern
-      @pattern = pattern
+      @pattern = pattern.downcase
     end
 
     def at pattern, words
@@ -55,7 +55,7 @@ module Wordcheat
     end
 
     def only= chars
-      @only = chars
+      @only = chars.downcase
     end
 
     def only chars, words
@@ -70,7 +70,7 @@ module Wordcheat
     end
 
     def must= chars
-      @must = chars
+      @must = chars.downcase
     end
 
     def must chars, words
@@ -85,7 +85,7 @@ module Wordcheat
     end
 
     def must_not= chars
-      @must_not = chars
+      @must_not = chars.downcase
     end
 
     def must_not chars, words
@@ -100,7 +100,7 @@ module Wordcheat
     end
 
     def length= len
-      @length = len
+      @length = Integer(len)
     end
 
     def length len, words

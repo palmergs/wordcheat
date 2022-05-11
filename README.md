@@ -1,8 +1,7 @@
 # Wordcheat
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/wordcheat`. To experiment with that code, run `bin/console` for an interactive prompt.
+This is a ruby command line utility for cheating a Wordl and Spelling Bee. 
 
-TODO: Delete this and the text above, and describe your gem
 
 ## Installation
 
@@ -22,7 +21,28 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+When installed as a gem it takes command line arguments and, given a file containing a list of words, returns a list of those words that match the criteria.
+
+```
+Usage: wordcheat [options]
+    -f, --file=PATH                  Path to a line delimited list of words (./words.txt is default)
+    -p, --pattern=PATTERN            Words must match the exact pattern using '_' for unknown spaces and letters for known spaces (e.g. 'b_dg_r')
+    -n, --length=LENGTH              Words much match the length given
+    -m, --must=CHARS                 Words must include the given letters
+    -x, --must-not=CHARS             Words must not include the given letters
+    -o, --only=CHARS                 Words must only use the letters given
+    -h, --help                       Display this screen
+```
+
+Example:
+
+If you had a Wordl game where you knew that the third leter was 'A' and had to include a 'C' and a 'V' you could run:
+
+```
+wordcheat -p __A__ -w CV
+```
+
+And you would get a list of words including the word "crave".
 
 ## Development
 
