@@ -37,19 +37,28 @@ Usage: wordcheat [options]
 
 Example:
 
-If you had a Wordl game where you knew that the third leter was 'A' and had to include a 'C' and a 'V' you could run:
+If you had a **Wordl** game where you knew that the third leter was 'A' and had to include a 'C' and a 'V' you could run:
 
 ```
 wordcheat -p __A__ -w CV
 ```
 
-And you would get a list of words including the word "crave".
+you would get a list of words including the word "crave".
+
+If you had a **Spelling Bee** game where the center letter was 'C' and the other letters were 'B', 'F', 'E', 'T', 'S' you could run:
+
+```
+wordcheat -m c -o cbfets -n 6
+```
+
+And you would get results including the word "effect".  
 
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
 To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+
 
 ## Contributing
 
