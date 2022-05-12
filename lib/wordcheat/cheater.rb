@@ -7,11 +7,13 @@ module Wordcheat
       @must = nil
       @must_not = nil
       @length = nil
+      @minimum = nil
     end
 
     def words
       words = load_words(@words_list_path)
       words = length(@length, words) if @length
+      words = minimum(@minimum, words) if @minimum
       words = only(@only, words) if @only
       words = must(@must, words) if @must
       words = must_not(@must_not, words) if @must_not
@@ -105,6 +107,14 @@ module Wordcheat
 
     def length len, words
       words.select {|word| word.length == len }
+    end
+
+    def minimum= len
+      @minimum = Integer(len)
+    end
+
+    def minimum len, words
+      words.select {|word| word.length >= len }
     end
   end
 end

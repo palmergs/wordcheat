@@ -28,6 +28,7 @@ Usage: wordcheat [options]
     -f, --file=PATH                  Path to a line delimited list of words (./words.txt is default)
     -p, --pattern=PATTERN            Words must match the exact pattern using '_' for unknown spaces and letters for known spaces (e.g. 'b_dg_r')
     -n, --length=LENGTH              Words much match the length given
+    -g, --at-least=LENGTH            Words much be at least length letters
     -m, --must=CHARS                 Words must include the given letters
     -x, --must-not=CHARS             Words must not include the given letters
     -o, --only=CHARS                 Words must only use the letters given

@@ -27,6 +27,13 @@ OptionParser.new do |parser|
               cheater.length = Integer(length)
             end
 
+  parser.on("-g LENGTH",
+            "--at-least=LENGTH",
+            Integer,
+            "Words much be at least length letters") do |length|
+              cheater.minimum = Integer(length)
+            end
+
   parser.on("-m CHARS",
             "--must=CHARS",
             String,

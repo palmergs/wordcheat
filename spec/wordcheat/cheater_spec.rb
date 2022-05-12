@@ -65,4 +65,11 @@ RSpec.describe Wordcheat::Cheater do
     matches = cheater.length(7, words)
     expect(matches).to eq(["goodbye", "muskrat"])
   end
+
+  it "can find words of a minimum length" do
+    cheater = Wordcheat::Cheater.new
+    matches = cheater.minimum(6, words)
+    expect(matches).to include("goodbye")
+    expect(matches).to include("bobcat")
+  end
 end
