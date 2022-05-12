@@ -13,6 +13,6 @@ jobs:
         ruby-version: 3.0.2
         bundler-cache: true
     - name: Run unit tests
-      run: rspec
+      run: bundle exec rake spec
     - name: Build the gem
       run: gem build
