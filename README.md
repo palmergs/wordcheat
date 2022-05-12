@@ -21,6 +21,8 @@ Or install it yourself as:
 
 ## Usage
 
+**NOTE** a word list is not included in this repo but the internet is full of text files containing lists of english words. This is good one: [words_alpha.txt](https://github.com/dwyl/english-words/blob/master/words_alpha.txt).
+
 When installed as a gem it takes command line arguments and, given a file containing a list of words, returns a list of those words that match the criteria.
 
 ```
@@ -40,7 +42,7 @@ Example:
 If you had a **Wordl** game where you knew that the third leter was 'A' and had to include a 'C' and a 'V' you could run:
 
 ```
-wordcheat -p __A__ -w CV
+wordcheat -p __A__ -w CV -f words_alpha.txt
 ```
 
 you would get a list of words including the word "crave".
@@ -48,7 +50,7 @@ you would get a list of words including the word "crave".
 If you had a **Spelling Bee** game where the center letter was 'C' and the other letters were 'B', 'F', 'E', 'T', 'S' you could run:
 
 ```
-wordcheat -m c -o cbfets -n 6
+wordcheat -g 4 -m c -o cbfets -f words_alpha.txt
 ```
 
 And you would get results including the word "effect".  
